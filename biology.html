@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎬 Biology - Lecture Series</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+
+    body {
+      font-family:'Poppins', sans-serif;
+      background: radial-gradient(circle at 10% 30%, #1b0034, #42378f, #f53844);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      padding:40px 20px;
+      color:#fff;
+      overflow-x:hidden;
+      position:relative;
+    }
+
+    body::before {
+      content:'';
+      position:absolute;
+      top:-100px; right:-150px;
+      width:400px; height:400px;
+      background: radial-gradient(circle, #f5384470, transparent 70%);
+      animation:moveGlow 8s ease-in-out infinite alternate;
+      filter:blur(90px);
+      z-index:0;
+    }
+
+    @keyframes moveGlow {
+      0%{transform:translate(0,0);}
+      100%{transform:translate(-200px,150px);}
+    }
+
+    h1 {
+      font-size:2.8rem;
+      margin-bottom:40px;
+      text-align:center;
+      background:linear-gradient(90deg,#ff0055,#ff9900,#ff00c8);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      letter-spacing:1.5px;
+      animation:gradientMove 6s linear infinite;
+      position:relative;
+      z-index:1;
+    }
+
+    @keyframes gradientMove {
+      0%{background-position:0%;}
+      100%{background-position:200%;}
+    }
+
+    .lecture-box {
+      width:100%;
+      max-width:800px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:20px;
+      padding:25px 30px;
+      backdrop-filter:blur(10px);
+      box-shadow:0 8px 25px rgba(0,0,0,0.4);
+      transition:all 0.3s ease;
+      cursor:pointer;
+      position:relative;
+      z-index:1;
+      margin-bottom:25px;
+    }
+
+    .lecture-box:hover {
+      transform:translateY(-6px) scale(1.02);
+      box-shadow:0 12px 35px rgba(255,0,85,0.4);
+      border-color:rgba(255,153,0,0.5);
+    }
+
+    .lecture-header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-size:1.3rem;
+      font-weight:600;
+      color:#ffb300;
+    }
+
+    .lecture-content {
+      display:none;
+      margin-top:15px;
+      color:#d1d5db;
+      font-size:1rem;
+      animation:fadeIn 0.4s ease;
+      text-align:left;
+    }
+
+    .lecture-content.active {display:block;}
+
+    @keyframes fadeIn {
+      from{opacity:0; transform:translateY(-10px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    .btn-watch {
+      display:inline-block;
+      margin-top:18px;
+      background:linear-gradient(135deg,#ff7b00,#ffcc00,#ff00c8);
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      padding:12px 30px;
+      border-radius:35px;
+      font-size:1rem;
+      box-shadow:0 0 25px rgba(255,140,0,0.6);
+      transition:all 0.3s ease;
+    }
+
+    .btn-watch:hover {
+      transform:scale(1.08);
+      background:linear-gradient(135deg,#ff00c8,#ffb300,#ff6a00);
+      box-shadow:0 0 40px rgba(255,0,200,0.6);
+    }
+
+    .btn-back {
+      display:inline-block;
+      margin-top:50px;
+      background:linear-gradient(135deg,#ff0055,#ff9900);
+      color:#fff;
+      font-weight:600;
+      padding:12px 28px;
+      border-radius:30px;
+      text-decoration:none;
+      transition:all 0.3s ease;
+      box-shadow:0 0 20px rgba(255,0,85,0.4);
+    }
+
+    .btn-back:hover {
+      transform:scale(1.05);
+      box-shadow:0 0 35px rgba(255,153,0,0.6);
+    }
+
+    footer {
+      margin-top:60px;
+      font-size:0.9rem;
+      opacity:0.7;
+      z-index:1;
+    }
+
+    @media (max-width:600px) {
+      h1{font-size:2.2rem;}
+      .lecture-header{font-size:1.1rem;}
+      .btn-watch{font-size:0.9rem; padding:10px 22px;}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔬 Biology – Lecture Series</h1>
+
+  <!-- Cell 1 -->
+  <div class="lecture-box" onclick="toggleLecture('lec1','arrow1')">
+    <div class="lecture-header">
+      <span>1️⃣ Cell – Class 1</span>
+      <i id="arrow1">▼</i>
+    </div>
+    <div id="lec1" class="lecture-content">
+      <p><strong>Duration:</strong> 45 min</p>
+      <p><strong>Description:</strong> Khooni Rishtein – Episode 1 (Part 1)</p>
+      <a href="https://us06web.zoom.us/rec/play/aVNcvyiYwY_za8bt0za8hTdgIW5O8-5fZB3XDZGAE4q7lEeV2ULylpZNe0ELroxtMbWbFMr_3qimZG77.BsciV1KYveRwp8Za?startTime=1761229309000" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Cell 2 -->
+  <div class="lecture-box" onclick="toggleLecture('lec2','arrow2')">
+    <div class="lecture-header">
+      <span>2️⃣ Cell – Class 2</span>
+      <i id="arrow2">▼</i>
+    </div>
+    <div id="lec2" class="lecture-content">
+      <p><strong>Duration:</strong> 50 min</p>
+      <p><strong>Description:</strong> Continuation of Cell Structure and Function</p>
+      <a href="https://us06web.zoom.us/rec/share/eXkYAqBqUaEyYm8CP44O725lrPvwr49it43cgSgJgiI0YZjD2j7G9lCYmwzjRm-I.6HobQFtJF3Mbulnw?startTime=1761310698000" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Plant Tissue -->
+  <div class="lecture-box" onclick="toggleLecture('lec3','arrow3')">
+    <div class="lecture-header">
+      <span>3️⃣ Plant Tissue – Class 3</span>
+      <i id="arrow3">▼</i>
+    </div>
+    <div id="lec3" class="lecture-content">
+      <p><strong>Duration:</strong> 55 min</p>
+      <p><strong>Description:</strong> Detailed explanation of Plant Tissues and their functions</p>
+      <a href="https://us06web.zoom.us/rec/share/IEhS-rkNP49gE6p_h625ZThZkg5BURYQxzXrSHxoxBL8MSDDMgruD9LxPrchLbDC.8TX-pXK-uoFpIlAJ?startTime=1761742164000" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Animal Tissue -->
+  <div class="lecture-box" onclick="toggleLecture('lec4','arrow4')">
+    <div class="lecture-header">
+      <span>4️⃣ Animal Tissue + PYQ– Class 4</span>
+      <i id="arrow4">▼</i>
+    </div>
+    <div id="lec4" class="lecture-content">
+      <p><strong>Duration:</strong> 55 min</p>
+      <p><strong>Description:</strong> In-depth look at different animal tissue types and their roles</p>
+      <a href="https://us06web.zoom.us/rec/share/IEhS-rkNP49gE6p_h625ZThZkg5BURYQxzXrSHxoxBL8MSDDMgruD9LxPrchLbDC.8TX-pXK-uoFpIlAJ?startTime=1761746472000" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Kidney + Nutrition in Plants -->
+  <div class="lecture-box" onclick="toggleLecture('lec5','arrow5')">
+    <div class="lecture-header">
+      <span>5️⃣ Kidney + Nutrition in Plants – Class 5</span>
+      <i id="arrow5">▼</i>
+    </div>
+    <div id="lec5" class="lecture-content">
+      <p><strong>Duration:</strong> 1 hr</p>
+      <p><strong>Description:</strong> Complete Animal Tissue revision with PYQ discussion and practice</p>
+      <a href="https://us06web.zoom.us/rec/share/jT0Yp7aVABG63oidE_txsFUZVq1niBmaC-__veE0PyoDSuz_64BpTpFGQV38lvyp.19dYcwngjx1MojsP?startTime=1762001782000" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Nutrition in Animal + Blood -->
+  <div class="lecture-box" onclick="toggleLecture('lec6','arrow6')">
+    <div class="lecture-header">
+      <span>6️⃣ Nutrition in Animal + Blood – Class 6</span>
+      <i id="arrow6">▼</i>
+    </div>
+    <div id="lec6" class="lecture-content">
+      <p><strong>Duration:</strong> 1 hr 5 min</p>
+      <p><strong>Description:</strong> Combined lecture on kidney physiology and nutrition in plants</p>
+      <a href="https://us06web.zoom.us/rec/share/jT0Yp7aVABG63oidE_txsFUZVq1niBmaC-__veE0PyoDSuz_64BpTpFGQV38lvyp.19dYcwngjx1MojsP?startTime=1762005578000" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Blood Group + Heart -->
+  <div class="lecture-box" onclick="toggleLecture('lec7','arrow7')">
+    <div class="lecture-header">
+      <span>7️⃣ Blood Group + Heart – Class 7</span>
+      <i id="arrow7">▼</i>
+    </div>
+    <div id="lec7" class="lecture-content">
+      <p><strong>Duration:</strong> 1 hr</p>
+      <p><strong>Description:</strong> Detailed session covering blood groups, heart structure, and circulation process.</p>
+      <a href="https://us06web.zoom.us/rec/share/_mpK769QPVW0LMW6PgoA7ba1v0hxc4cb8ItcgnVRlxDc42Tf7_xVJSpiFXmi9twL._-hrwHTJazksXLJi?startTime=1762180398000" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 8 – Bimariyo ki Badi -->
+<div class="lecture-box" onclick="toggleLecture('lecture8','arrow8')">
+  <div class="lecture-header">
+    <span>8️⃣ Bimariyo ki Badi Class</span>
+    <span id="arrow8">▼</span>
+  </div>
+  <div id="lecture8" class="lecture-content">
+    <p><strong>Duration:</strong> [Insert Duration]</p>
+    <p><strong>Description:</strong> “Bimariyo ki Badi” class – detailed coverage of major diseases, causes, prevention & exam-relevant facts.</p>
+    <a href="https://us06web.zoom.us/rec/share/tqUkjxYCHG2reygjQHLex4S8iz4Z0ksHQji22PivevMTZp69yPcRzBCPJqbGxaEu.xhsN6QEZ65oMiNby?startTime=1762434294000"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 9 – Animal Hormone + Plant Hormone -->
+<div class="lecture-box" onclick="toggleLecture('lecture9','arrow9')">
+  <div class="lecture-header">
+    <span>9️⃣ Animal Hormone + Plant Hormone</span>
+    <span id="arrow9">▼</span>
+  </div>
+  <div id="lecture9" class="lecture-content">
+    <p><strong>Duration:</strong> [Insert Duration]</p>
+    <p><strong>Description:</strong> Understanding the role of hormones in animals and plants – key concepts, types, functions, and their importance for exams.</p>
+    <a href="https://us06web.zoom.us/rec/share/F31jfzt3CP9pX4urNJ3F0adU_4z-EhyeMOr9jiGFVs9hUxAzK9P0RJXpm3GF9iF_.rHrymv7D15Bv460Q?startTime=1762865926000"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 10 – Flowers + Stem + Root -->
+<div class="lecture-box" onclick="toggleLecture('lecture10','arrow10')">
+  <div class="lecture-header">
+    <span>🔟 Flowers + Stem + Root</span>
+    <span id="arrow10">▼</span>
+  </div>
+  <div id="lecture10" class="lecture-content">
+    <p><strong>Duration:</strong> [Insert Duration]</p>
+    <p><strong>Description:</strong> Complete lecture on plant anatomy covering flowers, stems, and roots with key definitions and exam-based examples.</p>
+    <a href="https://us06web.zoom.us/rec/share/F31jfzt3CP9pX4urNJ3F0adU_4z-EhyeMOr9jiGFVs9hUxAzK9P0RJXpm3GF9iF_.rHrymv7D15Bv460Q?startTime=1762870483000" 
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 11 – Ecological Classification of Plants -->
+<div class="lecture-box" onclick="toggleLecture('lecture11','arrow11')">
+  <div class="lecture-header">
+    <span>1️⃣1️⃣ Ecological Classification of Plants</span>
+    <span id="arrow11">▼</span>
+  </div>
+  <div id="lecture11" class="lecture-content">
+    <p><strong>Duration:</strong> [Insert Duration]</p>
+    <p><strong>Description:</strong> Detailed exploration of plant classes based on ecology — terrestrial, aquatic, epiphytes, and more, with exam-focused insights.</p>
+    <a href="https://us06web.zoom.us/rec/share/F31jfzt3CP9pX4urNJ3F0adU_4z-EhyeMOr9jiGFVs9hUxAzK9P0RJXpm3GF9iF_.rHrymv7D15Bv460Q?startTime=1762873509000" 
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 12 – Reproduction -->
+<div class="lecture-box" onclick="toggleLecture('lecture12','arrow12')">
+  <div class="lecture-header">
+    <span>1️⃣2️⃣ Reproduction</span>
+    <span id="arrow12">▼</span>
+  </div>
+  <div id="lecture12" class="lecture-content">
+    <p><strong>Duration:</strong> [Insert Duration]</p>
+    <p><strong>Description:</strong> In-depth coverage of reproduction in plants and animals including sexual and asexual methods, key exam concepts.</p>
+    <a href="https://us06web.zoom.us/rec/share/lCYttr9I6vCPQc-IHg7DKhP7PpDqMqZAPr9SYnzfMYguirJXZS_WfFsGYX6uFgV7.iiW1tsmn1WCM-Fum?startTime=1762952247000" 
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 13 – Types of Chromosome + Nervous System -->
+<div class="lecture-box" onclick="toggleLecture('lecture13','arrow13')">
+  <div class="lecture-header">
+    <span>1️⃣3️⃣ Types of Chromosome + Nervous System</span>
+    <span id="arrow13">▼</span>
+  </div>
+  <div id="lecture13" class="lecture-content">
+    <p><strong>Duration:</strong> [Insert Duration]</p>
+    <p><strong>Description:</strong> Concepts of chromosome types, their structure, and the human/animal nervous system including neuron structure, reflex arc, and central/peripheral system.</p>
+    <a href="https://us06web.zoom.us/rec/share/lCYttr9I6vCPQc-IHg7DKhP7PpDqMqZAPr9SYnzfMYguirJXZS_WfFsGYX6uFgV7.iiW1tsmn1WCM-Fum?startTime=1762956529000"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 14 – Monera + Protista + Fungi + Plantae -->
+<div class="lecture-box" onclick="toggleLecture('lecture14','arrow14')">
+  <div class="lecture-header">
+    <span>1️⃣4️⃣ Monera + Protista + Fungi + Plantae</span>
+    <span id="arrow14">▼</span>
+  </div>
+  <div id="lecture14" class="lecture-content">
+    <p><strong>Duration:</strong> [Insert Duration]</p>
+    <p><strong>Description:</strong> Classification of living organisms covering Kingdom Monera, Protista, Fungi and Plantae — important taxonomy and examples for exams.</p>
+    <a href="https://us06web.zoom.us/rec/share/qJdlevR9O6nw6tWVxkdFhYXodmY4kBEQO9wxGC1fG6Ri52tWcsdLT5uoLbdso6wI.6G590sPIVMAb9A0u?startTime=1763038720000" 
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 15 – PYQs + Animalia -->
+<div class="lecture-box" onclick="toggleLecture('lecture15','arrow15')">
+  <div class="lecture-header">
+    <span>1️⃣5️⃣ PYQs + Animalia</span>
+    <span id="arrow15">▼</span>
+  </div>
+  <div id="lecture15" class="lecture-content">
+    <p><strong>Duration:</strong> [Insert Duration]</p>
+    <p><strong>Description:</strong> Previous Year Questions (PYQs) for the Animalia kingdom — practice with important PYQ patterns and solved examples.</p>
+    <a href="https://us06web.zoom.us/rec/share/qJdlevR9O6nw6tWVxkdFhYXodmY4kBEQO9wxGC1fG6Ri52tWcsdLT5uoLbdso6wI.6G590sPIVMAb9A0u?startTime=1763042745000" 
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+
+  <a href="dashboard.html" class="btn-back">⬅ Back to Dashboard</a>
+
+  <footer>🔥 Designed by <strong>Aditya Shirke</strong> | Biology Series</footer>
+
+  <script>
+    function toggleLecture(id,arrowId){
+      const content=document.getElementById(id);
+      const arrow=document.getElementById(arrowId);
+      content.classList.toggle('active');
+      arrow.textContent=content.classList.contains('active')?'▲':'▼';
+    }
+  </script>
+</body>
+</html>

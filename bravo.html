@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baat Cheet - Lecture 1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+      background-size: 600% 600%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      text-align: center;
+      padding: 30px 15px;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      background: linear-gradient(90deg, #00e5ff, #00bcd4, #22ff88, #ffde00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+      animation: shine 2s linear infinite alternate, fadeIn 1s ease-in-out;
+    }
+
+    @keyframes shine {
+      0% {background-position: 0% 50%;}
+      100% {background-position: 200% 50%;}
+    }
+
+    .lecture-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      padding: 25px;
+      max-width: 700px;
+      margin: 0 auto 25px auto;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+      animation: slideUp 0.8s ease forwards;
+      cursor: pointer;
+    }
+
+    .lecture-box:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 35px rgba(0, 188, 212, 0.7);
+      border: 1px solid rgba(0, 188, 212, 0.5);
+    }
+
+    .lecture-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #00e5ff;
+      margin-bottom: 10px;
+    }
+
+    .lecture-header span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lecture-content {
+      display: none;
+      font-size: 1rem;
+      color: #d1d5db;
+      text-align: left;
+      margin-top: 15px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .lecture-content.active {
+      display: block;
+    }
+
+    .btn-watch {
+      display: inline-block;
+      background: linear-gradient(135deg, #00bcd4, #22ff88, #ffde00);
+      padding: 14px 28px;
+      border-radius: 35px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 6px 25px rgba(0, 188, 212, 0.6), 0 0 30px rgba(34, 255, 136, 0.5);
+      transition: background 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      margin-top: 15px;
+    }
+
+    .btn-watch:hover {
+      background: linear-gradient(135deg, #22ff88, #ffde00, #00bcd4);
+      transform: scale(1.08);
+      box-shadow: 0 8px 40px rgba(0, 188, 212, 0.8), 0 0 40px rgba(34, 255, 136, 0.6);
+    }
+
+    .btn-back {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff9800, #ff5722);
+      padding: 12px 24px;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 30px;
+      box-shadow: 0 5px 20px rgba(255, 87, 34, 0.5);
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .btn-back:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #ff5722, #ff9800);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-15px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes slideUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎬 Reasoning</h1>
+
+  <!-- Lecture 1 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture1')">
+    <div class="lecture-header">
+      <span>1. Khooni Rishtein - Part 1</span>
+      <i id="arrow-lecture1">▼</i>
+    </div>
+    <div id="lecture1" class="lecture-content">
+      <p><strong>Duration:</strong> 45 min</p>
+      <p><strong>Description:</strong> Khooni Rishtein - Episode 1 (Part 1)</p>
+      <a href="https://us06web.zoom.us/rec/share/0rlwMUsP2pwpQVo5O0oTgm40FMtpuyBKCs-ZY7gm2pUaze-8yFjAaufUpmhuSXZT.kgtluX_fuNrx17uO" 
+         target="_blank" 
+         class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 2 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture2')">
+    <div class="lecture-header">
+      <span>2. Khooni Rishtein - Part 2</span>
+      <i id="arrow-lecture2">▼</i>
+    </div>
+    <div id="lecture2" class="lecture-content">
+      <p><strong>Duration:</strong> 50 min</p>
+      <p><strong>Description:</strong> Khooni Rishtein - Episode 1 (Part 2)</p>
+      <a href="https://us06web.zoom.us/rec/play/4VRkS0G5AD5zs06H6rpm0GwMCT9DQlcM73q__Jx0w3jVi8tGEPnUJq_-74B3bt361WD8xrxWJ5gUV2Ev.pVIhIrFgpS-nWVFY" 
+         target="_blank" 
+         class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+     <!-- Lecture 3 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture3')">
+    <div class="lecture-header">
+      <span>2. Khooni Rishtein - Part 3</span>
+      <i id="arrow-lecture2">▼</i>
+    </div>
+    <div id="lecture3" class="lecture-content">
+      <p><strong>Duration:</strong> 50 min</p>
+      <p><strong>Description:</strong> Khooni Rishtein - Episode 1 (Part 2)</p>
+      <a href="https://us06web.zoom.us/rec/share/ad-gaOMSK6oiLEUUAoe0-kpeQUiLW51OniKT0f0sJiSrCsHgGe9eHWUVpxtBsuTZ.Ysdh9DfkwEZFYHSM" 
+         target="_blank" 
+         class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+  <a href="dashboard.html" class="btn-back">⬅ Back to Dashboard</a>
+
+  <script>
+    function toggleLecture(id) {
+      const content = document.getElementById(id);
+      const arrow = document.getElementById(`arrow-${id}`);
+      content.classList.toggle('active');
+      arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+    }
+  </script>
+
+</body>
+</html>

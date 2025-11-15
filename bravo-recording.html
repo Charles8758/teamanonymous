@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baat Cheet - NDA Maths</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(270deg, #00b4db, #0083b0, #00c6ff, #0072ff);
+      background-size: 600% 600%;
+      animation: gradientBG 12s ease infinite;
+      color: #e9faff;
+      text-align: center;
+      padding: 30px 15px;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 35px;
+      background: linear-gradient(90deg, #00fff0, #00bcd4, #22ff88, #00ffe0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
+      animation: shine 2s linear infinite alternate;
+    }
+
+    @keyframes shine {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    .lecture-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 18px;
+      backdrop-filter: blur(14px);
+      padding: 22px;
+      max-width: 750px;
+      margin: 0 auto 25px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      transition: all 0.35s ease;
+      cursor: pointer;
+    }
+
+    .lecture-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 45px rgba(0, 255, 200, 0.5);
+      border: 1px solid rgba(0, 255, 200, 0.5);
+    }
+
+    .lecture-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #a7f5ff;
+      margin-bottom: 8px;
+    }
+
+    .lecture-content {
+      display: none;
+      font-size: 1rem;
+      color: #d9faff;
+      text-align: left;
+      margin-top: 12px;
+      line-height: 1.5;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .lecture-content.active {
+      display: block;
+    }
+
+    .btn-watch {
+      display: inline-block;
+      background: linear-gradient(135deg, #00e5ff, #00ffcc);
+      padding: 12px 26px;
+      border-radius: 35px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      box-shadow: 0 5px 25px rgba(0, 255, 200, 0.5);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      margin-top: 15px;
+    }
+
+    .btn-watch:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 40px rgba(0, 255, 255, 0.7);
+    }
+
+    .btn-back {
+      display: inline-block;
+      background: linear-gradient(135deg, #00bcd4, #22ff88);
+      padding: 12px 24px;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 35px;
+      box-shadow: 0 5px 25px rgba(0, 255, 200, 0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .btn-back:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 40px rgba(0, 255, 255, 0.7);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🎬 NDA Maths Lectures</h1>
+
+  <!-- Lecture 1 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture1')">
+    <div class="lecture-header">
+      <span>1️⃣ Introduction</span>
+      <i id="arrow-lecture1">▼</i>
+    </div>
+    <div id="lecture1" class="lecture-content">
+      <p><strong>Duration:</strong> 45 min</p>
+      <p><strong>Description:</strong> Introduction (Part 1)</p>
+      <a href="https://us06web.zoom.us/rec/share/Tqcx3FDAJ96SFPlw1qw_Zalls0wVELV_EFbYZ9h3704woAmaPRsyi_neOBNVfSaf.wDBi05RedS7QaHmN"
+         target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 2 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture2')">
+    <div class="lecture-header">
+      <span>2️⃣ Logarithm Class 1</span>
+      <i id="arrow-lecture2">▼</i>
+    </div>
+    <div id="lecture2" class="lecture-content">
+      <p><strong>Duration:</strong> 50 min</p>
+      <p><strong>Description:</strong> Logarithm basics and rules</p>
+      <a href="https://us06web.zoom.us/rec/share/KubG3YhhNBLPCjQwSq8sxPdolx-rU6BGHqlGDPT9WY9X5L2ugK0xBexbhqLBtHfE.kL8_NO9thLgydmqe"
+         target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 3 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture3')">
+    <div class="lecture-header">
+      <span>3️⃣ Logarithm Class 2</span>
+      <i id="arrow-lecture3">▼</i>
+    </div>
+    <div id="lecture3" class="lecture-content">
+      <p><strong>Duration:</strong> 55 min</p>
+      <p><strong>Description:</strong> Advanced concepts and practice of Logarithm</p>
+      <a href="https://us06web.zoom.us/rec/share/gZmuuZo4L0a9Y6HCbr5hRROY_sQBRAE6ssL_CIv4HPKscD0OZzI3uuUJYcxzy5Ik.d6bTVY6aMHqnSk8B"
+         target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 4 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture4')">
+    <div class="lecture-header">
+      <span>4️⃣ Equation Class 1</span>
+      <i id="arrow-lecture4">▼</i>
+    </div>
+    <div id="lecture4" class="lecture-content">
+      <p><strong>Duration:</strong> 60 min</p>
+      <p><strong>Description:</strong> Basics of Linear and Quadratic Equations</p>
+      <a href="https://us06web.zoom.us/rec/share/bKMlmnafvL9fYdvkaEVYj7NUmMQOeq_NXzOF1eTRpm8QhQT9L9KYnn6quib60rWW.1SYCPQTYfRpdvBD2"
+         target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 5 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture5')">
+    <div class="lecture-header">
+      <span>5️⃣ Equation Class 2</span>
+      <i id="arrow-lecture5">▼</i>
+    </div>
+    <div id="lecture5" class="lecture-content">
+      <p><strong>Duration:</strong> 70 min</p>
+      <p><strong>Description:</strong> Practice questions and advanced equation solving</p>
+      <a href="https://us06web.zoom.us/rec/share/0mpWtM_CXheoNusFHz8p9wnIF7lbgFyWlDusKZXNQSSejEFRw5oGEUeZ_K8-mHuQ.AEYq08eBv0_FoiKx"
+         target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 6 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture6')">
+    <div class="lecture-header">
+      <span>6️⃣ Equation Class 3</span>
+      <i id="arrow-lecture6">▼</i>
+    </div>
+    <div id="lecture6" class="lecture-content">
+      <p><strong>Duration:</strong> 65 min</p>
+      <p><strong>Description:</strong> Complex equation types and mixed problem solving</p>
+      <a href="https://us06web.zoom.us/rec/share/GcTDzhDNot9eKNXI-a1GhTwne7D8xHfLl-tr46s8igsR70E8xIAUUzz7XHtdfB1B.N58IEtYAvjGW5I3-"
+         target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 7 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture7')">
+    <div class="lecture-header">
+      <span>7️⃣ Equation Last Class + Binary 1st Class</span>
+      <i id="arrow-lecture7">▼</i>
+    </div>
+    <div id="lecture7" class="lecture-content">
+      <p><strong>Duration:</strong> 75 min</p>
+      <p><strong>Description:</strong> Final Equation concepts and introduction to Binary System</p>
+      <a href="https://us06web.zoom.us/rec/share/zLCnbO_BtJ6A7cHYDpUuVe2B7El0Zzs237Mhco8nL4W7uGpSDZjjXkuQV1kBckCQ.VY48rcbWNAoa-Swk"
+         target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 8 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture8')">
+    <div class="lecture-header">
+      <span>8️⃣ Binary 2nd Class</span>
+      <i id="arrow-lecture8">▼</i>
+    </div>
+    <div id="lecture8" class="lecture-content">
+      <p><strong>Duration:</strong> 70 min</p>
+      <p><strong>Description:</strong> Binary System advanced practice and conversions.</p>
+      <a href="https://us06web.zoom.us/rec/share/eE2V3G6Gff6LO_mxbvHSZf-CXpjp7gy7MHvsjz9rjeytefD5lLnWkjEboJPTwf_6.eYzk7GfFz4Gaffsy"
+         target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 9 (NEW) -->
+  <div class="lecture-box" onclick="toggleLecture('lecture9')">
+    <div class="lecture-header">
+      <span>9️⃣ Set Relation - Class 1</span>
+      <i id="arrow-lecture9">▼</i>
+    </div>
+    <div id="lecture9" class="lecture-content">
+      <p><strong>Duration:</strong> 60 min</p>
+      <p><strong>Description:</strong> Introduction to Sets, Relations and examples.</p>
+      <a href="https://us06web.zoom.us/rec/share/34745j1C3xzhFG9HrK3eCNSUnODiBf9MpQCaQB5lEgcicuNJGBb0Ct-qu88aYswB.Yrz-LSSbvknhufux"
+         target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 10 -->
+<div class="lecture-box" onclick="toggleLecture('lecture10')">
+  <div class="lecture-header">
+    <span>🔟 Set Relation - Class 2</span>
+    <i id="arrow-lecture10">▼</i>
+  </div>
+  <div id="lecture10" class="lecture-content">
+    <p><strong>Duration:</strong> 60 min</p>
+    <p><strong>Description:</strong> Set relation continuation with more examples.</p>
+    <a href="https://us06web.zoom.us/rec/share/ZUWRK0j4TXXtjwQdDmeRF-Zsq7IsEVZNhg9DBY9-CXNDtBlXyQkuhL55AmGhTeSc.1eEkZbDOTSeQfbon"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 11 -->
+<div class="lecture-box" onclick="toggleLecture('lecture11')">
+  <div class="lecture-header">
+    <span>1️⃣1️⃣ Set Relation - Class 3</span>
+    <i id="arrow-lecture11">▼</i>
+  </div>
+  <div id="lecture11" class="lecture-content">
+    <p><strong>Duration:</strong> 60 min</p>
+    <p><strong>Description:</strong> Final Set Relation concepts and problem solving.</p>
+    <a href="https://us06web.zoom.us/rec/share/ay5WLCVKFT6J9lISwKEL-KF75cpvcLighNx64eKGJzbkpCWNGnQZfrAd2cyC6G-8.NbnU3sDRqoI2U4EZ"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 12 -->
+<div class="lecture-box" onclick="toggleLecture('lecture12')">
+  <div class="lecture-header">
+    <span>1️⃣2️⃣ Complex Number - Class 1</span>
+    <i id="arrow-lecture12">▼</i>
+  </div>
+  <div id="lecture12" class="lecture-content">
+    <p><strong>Duration:</strong> 65 min</p>
+    <p><strong>Description:</strong> Introduction to Complex Numbers.</p>
+    <a href="https://us06web.zoom.us/rec/share/T5g3sHC0z0l5yw_UkCXO4QD9iZ4uKerhtizdoCOFmhN-ymEj4PpgT5FeKMXFs8aT.6fNWv8axRXwbsIlK"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 13 -->
+<div class="lecture-box" onclick="toggleLecture('lecture13')">
+  <div class="lecture-header">
+    <span>1️⃣3️⃣ Complex Number - Class 2</span>
+    <i id="arrow-lecture13">▼</i>
+  </div>
+  <div id="lecture13" class="lecture-content">
+    <p><strong>Duration:</strong> 70 min</p>
+    <p><strong>Description:</strong> Complex numbers operations and practice.</p>
+    <a href="https://us06web.zoom.us/rec/share/0tF_NO6B17NPfhXw7TPmvCCL1wH5b3RJrpHksm6rjHP4PoVTNLjyo5uu_KIteAHn.ZK-1lvFby5Ictm5a"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 14 -->
+<div class="lecture-box" onclick="toggleLecture('lecture14')">
+  <div class="lecture-header">
+    <span>1️⃣4️⃣ Complex Number - Class 3</span>
+    <i id="arrow-lecture14">▼</i>
+  </div>
+  <div id="lecture14" class="lecture-content">
+    <p><strong>Duration:</strong> 65 min</p>
+    <p><strong>Description:</strong> Advanced concepts of Complex Numbers.</p>
+    <a href="https://us06web.zoom.us/rec/share/mWxXOqY3Cx0ETTCV0vcEK7JI20dZbhjIELtz0ZpxGDdRvATXmP8AQGzliIFJplAm.1KUHkWhmXfSLjI5P"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 15 -->
+<div class="lecture-box" onclick="toggleLecture('lecture15')">
+  <div class="lecture-header">
+    <span>1️⃣5️⃣ Complex Number - Last Class</span>
+    <i id="arrow-lecture15">▼</i>
+  </div>
+  <div id="lecture15" class="lecture-content">
+    <p><strong>Duration:</strong> 75 min</p>
+    <p><strong>Description:</strong> Final concepts and full chapter revision.</p>
+    <a href="https://us06web.zoom.us/rec/share/BRdpXk7SpSEPVghAfGAHT84XOjZjT7JonDs3IeCziC9GnU3qEFNv02xMvYbvSxvQ.C6wV0AlJ5OEgVngd"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+  <a href="dashboard.html" class="btn-back">⬅ Back to Dashboard</a>
+
+  <script>
+    function toggleLecture(id) {
+      const content = document.getElementById(id);
+      const arrow = document.getElementById(`arrow-${id}`);
+      content.classList.toggle('active');
+      arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+    }
+  </script>
+
+</body>
+</html>

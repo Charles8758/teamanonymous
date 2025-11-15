@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subject Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+      /* Fallback background for when video fails or is disabled */
+      background: linear-gradient(120deg,#0f172a,#020617);
+    }
+
+    /* Background Video */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.5; /* Reduced opacity to make the foreground easier to read */
+    }
+
+    /* Header */
+    h1 {
+        font-size:2.8rem;
+        font-weight:700;
+        /* Using the purple/cyan gradient from the main dashboard */
+        background: linear-gradient(90deg,#06b6d4,#9333ea);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing:1px;
+        text-align:center;
+        margin-bottom:40px;
+        animation: glow 3s infinite alternate;
+        position: relative;
+        z-index: 1;
+    }
+    @keyframes glow { from { text-shadow:0 0 10px #06b6d4,0 0 20px #9333ea; } to { text-shadow:0 0 20px #9333ea,0 0 40px #06b6d4; } }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px; /* Increased gap for better visual separation */
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .subject-button {
+      display: block;
+      border-radius: 20px; /* Adjusted radius for consistency */
+      overflow: hidden;
+      /* Changed to use the standard background for visual consistency */
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Darker shadow for the video background */
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .subject-button:hover {
+      transform: translateY(-8px) scale(1.03); /* Lift and scale effect */
+      /* Consistent hover shadow with the purple/cyan theme */
+      box-shadow: 0 15px 40px rgba(6,182,212,0.6), 0 0 45px rgba(147,51,234,0.6);
+    }
+
+    .subject-button img {
+      width: 100%;
+      /* Making the images slightly taller than the previous page for better visibility */
+      height: 190px; 
+      object-fit: cover; 
+      display: block;
+      border-radius: 19px 19px 0 0; /* Only top corners rounded for the image */
+      transition: transform 0.5s ease, opacity 0.3s ease;
+      opacity: 0.95;
+    }
+
+    .subject-button:hover img {
+      transform: scale(1.05); /* Reduced scale on image hover */
+      opacity: 1;
+    }
+    
+    /* Added a text element below the image for better structure like the topic page */
+    .subject-button p {
+        padding: 15px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-align: center;
+        color: #e0f2fe; /* Light blue text */
+        background: #111827; /* Dark background for text area */
+        border-radius: 0 0 19px 19px;
+    }
+
+    /* Back button */
+    .btn {
+        display:inline-block;
+        margin-top:50px; 
+        padding:12px 22px;
+        border-radius:12px;
+        /* Using the same gradient as the dashboard buttons */
+        background: linear-gradient(90deg,#06b6d4,#9333ea);
+        color:white;
+        font-weight:600;
+        text-decoration:none;
+        cursor:pointer;
+        transition: all 0.3s ease;
+        box-shadow:0 0 15px rgba(147,51,234,0.4);
+        font-size:1rem;
+        border:none;
+        position: relative;
+        z-index: 1;
+    }
+
+    .btn:hover {
+        transform: scale(1.08) translateY(-2px);
+        box-shadow:0 0 25px rgba(6,182,212,0.6),0 0 35px rgba(147,51,234,0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="ITACHI.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="header">
+    <h1>📚 NDA JOURNEY SUBJECTS</h1>
+  </div>
+
+  <div class="container">
+     <a href="batcheet.html" class="subject-button">
+      <img src="101.png" alt="Medieval History">
+      <p>Batcheet</p>
+    </a>
+     <a href="englishgrammer.html" class="subject-button">
+      <img src="2.png" alt="Medieval History">
+      <p>English Grammer</p>
+    </a>
+    <a href="medieval-history.html" class="subject-button">
+      <img src="3.png" alt="Medieval History">
+      <p>Medieval History</p>
+    </a>
+    <a href="indiangeography.html" class="subject-button">
+      <img src="104.png" alt="Indian Geography">
+      <p>Indian Geography</p>
+    </a>
+    <a href="biology.html" class="subject-button">
+      <img src="105.png" alt="Biology">
+      <p>Biology</p>
+    </a>
+  </div>
+
+  <a href="dashboard.html" class="btn">⬅️ Back to Main Dashboard</a>
+
+</body>
+</html>

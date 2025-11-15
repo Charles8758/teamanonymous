@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baat Cheet - English Lectures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at 20% 20%, #0f2027, #203a43, #2c5364);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 20px;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #00e5ff50, transparent 70%);
+      animation: floatGlow 10s ease-in-out infinite alternate;
+      z-index: 0;
+      filter: blur(100px);
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(200px, 150px); }
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 40px;
+      background: linear-gradient(90deg, #00e5ff, #22ff88, #ffde00, #ff007a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 6s linear infinite;
+      letter-spacing: 2px;
+      z-index: 1;
+      position: relative;
+    }
+
+    @keyframes shine {
+      0% { background-position: 0%; }
+      100% { background-position: 200%; }
+    }
+
+    .lecture-container {
+      width: 100%;
+      max-width: 850px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .lecture-box {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 25px 30px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .lecture-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,229,255,0.1) 0%, transparent 70%);
+      transform: rotate(25deg);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .lecture-box:hover::before {
+      opacity: 1;
+    }
+
+    .lecture-box:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(0, 229, 255, 0.4);
+      box-shadow: 0 12px 35px rgba(0, 229, 255, 0.3);
+    }
+
+    .lecture-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #00e5ff;
+    }
+
+    .lecture-header i {
+      transition: transform 0.3s ease;
+    }
+
+    .lecture-box.active .lecture-header i {
+      transform: rotate(180deg);
+    }
+
+    .lecture-content {
+      display: none;
+      margin-top: 15px;
+      color: #d1d5db;
+      font-size: 1rem;
+      animation: fadeIn 0.5s ease;
+      text-align: left;
+    }
+
+    .lecture-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-watch {
+      display: inline-block;
+      margin-top: 15px;
+      background: linear-gradient(135deg, #00e5ff, #22ff88);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 35px;
+      font-size: 1rem;
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .btn-watch:hover {
+      transform: scale(1.08);
+      background: linear-gradient(135deg, #22ff88, #ffde00);
+      box-shadow: 0 0 35px rgba(255, 222, 0, 0.6);
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 50px;
+      background: linear-gradient(135deg, #ff007a, #ffde00);
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 25px rgba(255, 0, 122, 0.3);
+    }
+
+    .btn-back:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 222, 0, 0.7);
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+      z-index: 1;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      .lecture-header { font-size: 1.1rem; }
+      .btn-watch { font-size: 0.9rem; padding: 10px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎬 English Lectures</h1>
+
+  <div class="lecture-container">
+
+    <!-- Lecture 1 -->
+    <div class="lecture-box" onclick="toggleLecture('lec1', this)">
+      <div class="lecture-header">
+        <span>1️⃣ 100 Idioms and Phrases</span>
+        <i id="arrow-lec1">▼</i>
+      </div>
+      <div id="lec1" class="lecture-content">
+        <p><strong>Duration:</strong> 45 min</p>
+        <p><strong>Description:</strong> 100 Common Idioms and Phrases explained in detail.</p>
+        <a href="https://us06web.zoom.us/rec/share/Mx5paNHKGTGi-YS6ujOwFAd0orLnoaYFolGcGPmrlrSnEwdnNhcH5s41-_9ObKFN.nEWl6HQheSGWnS50" target="_blank" class="btn-watch">🎥 Watch Class</a>
+      </div>
+    </div>
+
+    <!-- Lecture 2 -->
+    <div class="lecture-box" onclick="toggleLecture('lec2', this)">
+      <div class="lecture-header">
+        <span>2️⃣ Idioms and Phrases – Complete</span>
+        <i id="arrow-lec2">▼</i>
+      </div>
+      <div id="lec2" class="lecture-content">
+        <p><strong>Duration:</strong> 60 min</p>
+        <p><strong>Description:</strong> Full coverage of all important idioms and phrases for CDS & CAPF exams.</p>
+        <a href="https://us06web.zoom.us/rec/share/BOlwGIWcQqmHC9WoM8FvgJ8FSBMJ_fex_VeEPM3Mp-4_M7eaJIvhcq0Xv38CUlpQ.XY2MovxWdfF-1i5B" target="_blank" class="btn-watch">🎥 Watch Class</a>
+      </div>
+    </div>
+
+    <!-- Lecture 3 -->
+    <div class="lecture-box" onclick="toggleLecture('lec3', this)">
+      <div class="lecture-header">
+        <span>3️⃣ Grammar Rule 1–7</span>
+        <i id="arrow-lec3">▼</i>
+      </div>
+      <div id="lec3" class="lecture-content">
+        <p><strong>Duration:</strong> 70 min</p>
+        <p><strong>Description:</strong> Explanation of the first 7 fundamental grammar rules with examples and tricks.</p>
+        <a href="https://us06web.zoom.us/rec/share/-9gYy76fY6gtwqDXXpGMFlyxYPk1dB9SEXiz9ayWaVqMD9NKgjZ-B4aga-PW3e20.N__cryJ8afKnQkhG" target="_blank" class="btn-watch">🎥 Watch Class</a>
+      </div>
+    </div>
+  
+    <!-- Lecture 4 -->
+<div class="lecture-box" onclick="toggleLecture('lec4', this)">
+  <div class="lecture-header">
+    <span>4️⃣ Grammar Rule 8–14 (4th Class)</span>
+    <i id="arrow-lec4">▼</i>
+  </div>
+  <div id="lec4" class="lecture-content">
+    <p><strong>Duration:</strong> 75 min</p>
+    <p><strong>Description:</strong> Detailed explanation of Grammar Rules 8–14 with examples and exam-oriented shortcuts.</p>
+    <a href="https://us06web.zoom.us/rec/share/J-UUU5uUm8-KrIehkSxnNOSSql-QnzwELJ86B27I7zQ4vdEzjkKbzlkWAS9VkEKO.3pX0hT8uTRHy_4TB" 
+       target="_blank" 
+       class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+  </div>
+
+  <a href="dashboard.html" class="btn-back">⬅ Back to Dashboard</a>
+  <footer>⚡ Designed by <strong>Aditya Shirke</strong> | Baat Cheet</footer>
+
+  <script>
+    function toggleLecture(id, box) {
+      const content = document.getElementById(id);
+      const arrow = document.getElementById(`arrow-${id}`);
+      const isActive = content.classList.contains('active');
+
+      document.querySelectorAll('.lecture-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.lecture-box').forEach(el => el.classList.remove('active'));
+
+      if (!isActive) {
+        content.classList.add('active');
+        box.classList.add('active');
+        arrow.textContent = '▲';
+      } else {
+        arrow.textContent = '▼';
+      }
+    }
+  </script>
+</body>
+</html>

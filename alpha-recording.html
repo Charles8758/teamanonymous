@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📘 Maths – Percentage Classes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #00b4d8, #009688);
+      background-size: 200% 200%;
+      animation: moveGradient 6s ease infinite;
+      color: #fff;
+      text-align: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @keyframes moveGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00e5ff, #43cea2, #00b4db);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      animation: shine 4s linear infinite;
+    }
+
+    @keyframes shine {
+      from { background-position: 0%; }
+      to { background-position: 200%; }
+    }
+
+    .subtitle {
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .lecture-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 18px;
+      max-width: 700px;
+      width: 100%;
+      padding: 25px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .lecture-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0, 180, 219, 0.35);
+      border-color: rgba(0, 180, 219, 0.4);
+    }
+
+    .lecture-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #dfffff;
+    }
+
+    .lecture-content {
+      display: none;
+      text-align: left;
+      color: #e0f8f8;
+      font-size: 1rem;
+      margin-top: 15px;
+      line-height: 1.6;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .lecture-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-watch {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 28px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #43cea2, #00b4db);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(0, 180, 219, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn-watch:hover {
+      background: linear-gradient(135deg, #00e5ff, #43cea2);
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 180, 219, 0.5);
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #185a9d, #43cea2);
+      border-radius: 40px;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .btn-back:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>📘 Maths – Percentage Classes</h1>
+  <div class="subtitle">Master Percentage Concepts | Learn | Revise | Practice</div>
+
+  <!-- Lecture 1 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture1', 'arrow1')">
+    <div class="lecture-header">
+      <span>1️⃣ Introduction</span>
+      <span id="arrow1">▼</span>
+    </div>
+    <div id="lecture1" class="lecture-content">
+      <p><strong>Duration:</strong> 45 min</p>
+      <p><strong>Description:</strong> Percentage basics and introduction</p>
+      <a href="https://us06web.zoom.us/rec/share/WgcN8PdXx3CmHIES8xUoAuUMkiyRwlKS9_tO9hiSQ6OUHnZDEu3oXKJC2XrBV4K8.2jU2mByfj_rl4-YF" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 2 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture2', 'arrow2')">
+    <div class="lecture-header">
+      <span>2️⃣ Percentage Class 1</span>
+      <span id="arrow2">▼</span>
+    </div>
+    <div id="lecture2" class="lecture-content">
+      <p><strong>Duration:</strong> 50 min</p>
+      <p><strong>Description:</strong> Advanced percentage problems</p>
+      <a href="https://us06web.zoom.us/rec/share/N9dHsbL-Jh2UcGBXqMg5Y0P4TXVPTjLp7M3pSECyjT9F62Xn0SSjgu7TvUEkCjo_.41UVb422UO0UknbY" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 3 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture3', 'arrow3')">
+    <div class="lecture-header">
+      <span>3️⃣ Percentage Class 2</span>
+      <span id="arrow3">▼</span>
+    </div>
+    <div id="lecture3" class="lecture-content">
+      <p><strong>Duration:</strong> 60 min</p>
+      <p><strong>Description:</strong> High-level exam-oriented practice</p>
+      <a href="https://us06web.zoom.us/rec/share/UfoiayixhQj6rSAP0Nmi69aJMpjjIgE6xYlWdXVzyuoX7-4-RC2Nx-xQ65ZjOUpn.qJZsFRQdNnEBmFEr" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 4 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture4', 'arrow4')">
+    <div class="lecture-header">
+      <span>4️⃣ Percentage Class 3</span>
+      <span id="arrow4">▼</span>
+    </div>
+    <div id="lecture4" class="lecture-content">
+      <p><strong>Duration:</strong> 65 min</p>
+      <p><strong>Description:</strong> Final revision and problem solving on Percentage</p>
+      <a href="https://us06web.zoom.us/rec/share/pgVIMvzgr4VE16QAo4NLrPtLRoyTmJko9UjmAtIFrgnEMJ_gXD2r6m1WYdZnoUI4._OgLIYz74KW02wWW" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 5 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture5', 'arrow5')">
+    <div class="lecture-header">
+      <span>5️⃣ Percentage Class 4</span>
+      <span id="arrow5">▼</span>
+    </div>
+    <div id="lecture5" class="lecture-content">
+      <p><strong>Duration:</strong> 70 min</p>
+      <p><strong>Description:</strong> Advanced percentage practice and tricky exam problems</p>
+      <a href="https://us06web.zoom.us/rec/share/ZgK3S60TpGd1xn7lcoWz1Dv0J_rrNLf66tztFNtMc0oqpHbmaOy8GGq8kMmssJKx.v1heNFX4yx4MC9tg" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 6 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture6', 'arrow6')">
+    <div class="lecture-header">
+      <span>6️⃣ Percentage Class 5</span>
+      <span id="arrow6">▼</span>
+    </div>
+    <div id="lecture6" class="lecture-content">
+      <p><strong>Duration:</strong> 70 min</p>
+      <p><strong>Description:</strong> Advanced percentage practice and tricky exam problems</p>
+      <a href="https://us06web.zoom.us/rec/share/_d6T40PgAeOR_7A87hqimzVD_7R5c4oJfaMNRB8328yHcuY6TGTCHoigDzBl17mK.r3zzlWP6zWYnLSIt" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 7 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture7', 'arrow7')">
+    <div class="lecture-header">
+      <span>7️⃣ Percentage Last Class</span>
+      <span id="arrow7">▼</span>
+    </div>
+    <div id="lecture7" class="lecture-content">
+      <p><strong>Duration:</strong> 75 min</p>
+      <p><strong>Description:</strong> Percentage advanced level and final summary session</p>
+      <a href="https://us06web.zoom.us/rec/share/q_gfRsBHP5RdTBZYNIugZ4mXNDBqus3j2Eo6QR_S_BE8C5d0UcUEkh3dO552yytp.WWP37tbVmhgn6trC" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+   
+  <!-- Lecture 8 (NEW) -->
+  <div class="lecture-box" onclick="toggleLecture('lecture8','arrow8')">
+    <div class="lecture-header">
+      <span>8️⃣ Profit and Loss – Class 1</span>
+      <span id="arrow8">▼</span>
+    </div>
+    <div id="lecture8" class="lecture-content">
+      <p><strong>Duration:</strong> 70 min</p>
+      <p><strong>Description:</strong> Introduction to Profit and Loss – concepts, cost price, selling price, and examples.</p>
+      <a href="https://us06web.zoom.us/rec/share/ryhiOd6aFMsVmB4OS2QWTAvHHkCJfDH0uPex_gyPITKDeiltxuPe3_5XY5tS9zEx.MXj6MBzjJeK2mKTc"
+         target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 9 (NEW) -->
+<div class="lecture-box" onclick="toggleLecture('lecture9','arrow9')">
+  <div class="lecture-header">
+    <span>9️⃣ Profit and Loss – Class 2</span>
+    <span id="arrow9">▼</span>
+  </div>
+  <div id="lecture9" class="lecture-content">
+    <p><strong>Duration:</strong> 75 min</p>
+    <p><strong>Description:</strong> Advanced Profit and Loss – discount, marked price, and tricky exam problems.</p>
+    <a href="https://us06web.zoom.us/rec/share/JIW-wdUvjrCv0yvUG8LUwtlO3llwW83pQWDcGF1ler2tMWwkav7Kj6ZKqcaam12V.ebTcfE7RCiP9gWjz"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 10 (NEW) -->
+<div class="lecture-box" onclick="toggleLecture('lecture10','arrow10')">
+  <div class="lecture-header">
+    <span>🔟 Profit and Loss – Class 3</span>
+    <span id="arrow10">▼</span>
+  </div>
+  <div id="lecture10" class="lecture-content">
+    <p><strong>Duration:</strong> 75 min</p>
+    <p><strong>Description:</strong> Profit & Loss advanced concepts – successive discount, overall profit/loss, real exam problems.</p>
+    <a href="https://us06web.zoom.us/rec/share/3y7FRx74qG5fwi-YZMSJqZFzZgiBD1M5pqk3-qrbYgrXupE7Dxm_0Wy-VlXiha8E.wx7aDqpV_Fo2oFR3"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 11 (NEW) -->
+<div class="lecture-box" onclick="toggleLecture('lecture11','arrow11')">
+  <div class="lecture-header">
+    <span>1️⃣1️⃣ Profit and Loss – Class 4</span>
+    <span id="arrow11">▼</span>
+  </div>
+  <div id="lecture11" class="lecture-content">
+    <p><strong>Duration:</strong> 75 min</p>
+    <p><strong>Description:</strong> Profit & Loss expert session – cost price vs marked price, chain problems, timed drills.</p>
+    <a href="https://us06web.zoom.us/rec/share/Kb-8MbGJaLFLp9al6gGx_9tAbaCBx5yJ2GL8Ad6ZITw4ltpbGyfwDHt4sC697E_P.pqQSJzCca8eT5BjY"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 12 (NEW) -->
+<div class="lecture-box" onclick="toggleLecture('lecture12','arrow12')">
+  <div class="lecture-header">
+    <span>1️⃣2️⃣ Profit and Loss – Class 5</span>
+    <span id="arrow12">▼</span>
+  </div>
+  <div id="lecture12" class="lecture-content">
+    <p><strong>Duration:</strong> 75 min</p>
+    <p><strong>Description:</strong> Advanced profit & loss problems – real-life scenarios, percent profit, loss, and optimizing deals.</p>
+    <a href="https://us06web.zoom.us/rec/share/vN7kZi8ETUqwX9v9oNg_PAPC3CJTDH3UooiIUQMrjbezMeSzpblsF9DSQb-rJVg.vn7egFCV7VAjDOG6" 
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 13 (NEW) -->
+<div class="lecture-box" onclick="toggleLecture('lecture13','arrow13')">
+  <div class="lecture-header">
+    <span>1️⃣3️⃣ Profit & Loss – Class 6</span>
+    <span id="arrow13">▼</span>
+  </div>
+  <div id="lecture13" class="lecture-content">
+    <p><strong>Duration:</strong> 75 min</p>
+    <p><strong>Description:</strong> Further Profit & Loss practice including successive profit/loss and combining profit-loss transactions.</p>
+    <a href="https://us06web.zoom.us/rec/share/vBGhFEJaR7RNJRHG0xVusJCK7ha7oc8a35Ded6_S5a5mtQpz3H2RD_NG2VNloisP.zeKQbFznXxw08BpE" 
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 14 -->
+<div class="lecture-box" onclick="toggleLecture('lecture14','arrow14')">
+  <div class="lecture-header">
+    <span>1️⃣4️⃣ Interest – Class 1</span>
+    <span id="arrow14">▼</span>
+  </div>
+  <div id="lecture14" class="lecture-content">
+    <p><strong>Duration:</strong> 75 min</p>
+    <p><strong>Description:</strong> Introduction to Simple Interest, basic formulas, and concept-building.</p>
+    <a href="https://us06web.zoom.us/rec/share/2PyLkoMhvZ-jlVoQQ23Y84KBOSIbC8bFQLtzkFAmk99puDZGY7CNQHd5FrGWAHKu.6t30G9HcjONIJMRl"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+<!-- Lecture 15 -->
+<div class="lecture-box" onclick="toggleLecture('lecture15','arrow15')">
+  <div class="lecture-header">
+    <span>1️⃣5️⃣ Interest – Class 2</span>
+    <span id="arrow15">▼</span>
+  </div>
+  <div id="lecture15" class="lecture-content">
+    <p><strong>Duration:</strong> 80 min</p>
+    <p><strong>Description:</strong> Deeper dive into Simple Interest questions, problem-solving with examples.</p>
+    <a href="https://us06web.zoom.us/rec/share/vKme4TSBVW4v7LSnJ8jF1rZWg4WfChw4_aeNKqmtn_wiipBxpE4JJmUz6DBxKBzp.FWjyB8BYFFhxvRJL" 
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+  <a href="dashboard.html" class="btn-back">⬅ Back to Dashboard</a>
+
+  <script>
+    function toggleLecture(id, arrowId) {
+      const content = document.getElementById(id);
+      const arrow = document.getElementById(arrowId);
+
+      // Close other lectures
+      document.querySelectorAll('.lecture-content').forEach(c => {
+        if (c.id !== id) c.classList.remove('active');
+      });
+      document.querySelectorAll('[id^="arrow"]').forEach(a => {
+        if (a.id !== arrowId) a.textContent = '▼';
+      });
+
+      // Toggle current lecture
+      const open = content.classList.toggle('active');
+      arrow.textContent = open ? '▲' : '▼';
+    }
+  </script>
+</body>
+</html>

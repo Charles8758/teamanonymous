@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDS Journey Batches</title>
+
+<!-- 🌐 Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a0a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: 100vh;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.header-section h2 {
+    color: #00e5d8;
+    letter-spacing: 3px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.header-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+.header-section h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #00e5d8;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #00e5d8;
+}
+
+.telegram-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 26px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #0088cc, #00e5d8);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 0 0 15px rgba(0, 229, 216, 0.4);
+    transition: all 0.3s ease;
+}
+.telegram-btn:hover {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 229, 216, 0.6);
+}
+.developer-text {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-top: 8px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 30px;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 22px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 10px 30px rgba(0,229,216,0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0,229,216,0.3);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+.card:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0,229,216,0.4);
+}
+
+.card h2 {
+    margin: 12px 0 8px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #e0f2fe;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 8px rgba(0,229,216,0.4);
+}
+.card p {
+    font-size: 1rem;
+    margin: 8px 0;
+    color: #94a3b8;
+    position: relative;
+    z-index: 1;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(59,130,246,0.4);
+    font-size: 1rem;
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+.btn:hover {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 0 25px rgba(59,130,246,0.6);
+}
+</style>
+</head>
+<body>
+
+<div class="header-section">
+    <h2>ADITYA</h2>
+    <a href="https://t.me/+xPwfdbr2LSQxM2E1" target="_blank" class="telegram-btn">💬 Join Telegram Group</a>
+    <p class="developer-text">Meet your developer here</p>
+    <h1>CDS Journey Batches</h1>
+</div>
+
+<div class="card-container">
+
+    <div class="card">
+        <img src="charlie.png" alt="Charlie Batch">
+        <h2>Charlie Batch (AFCAT 1 2026)</h2>
+        <p>₹ 2499</p>
+        <button onclick="checkAccess('58293','charlie-recording.html')" class="btn">▶️ View Recording</button>
+    </div>
+
+    <div class="card">
+        <img src="alpha.png" alt="Alpha Math Batch">
+        <h2>Alpha MATH Batch (CDS 1 2026)</h2>
+        <p>₹ 1499</p>
+        <button onclick="checkAccess('17402','alpha-recording.html')" class="btn">▶️ View Recording</button>
+    </div>
+
+    <div class="card">
+        <img src="bravo.png" alt="Bravo Math Batch">
+        <h2>Bravo MATH Batch (NDA 1 2026)</h2>
+        <p>₹ 1699</p>
+        <button onclick="checkAccess('94681','bravo-recording.html')" class="btn">▶️ View Recording</button>
+    </div>
+
+    <div class="card">
+        <img src="ota.png" alt="OTA Gate Batch">
+        <h2>OTA GATE Batch (CDS 1 2026)</h2>
+        <p>₹ 1799</p>
+        <button onclick="checkAccess('30874','ota-recording.html')" class="btn">▶️ View Recording</button>
+    </div>
+
+    <div class="card">
+        <img src="zulumaths.png" alt="Zulu Maths Batch">
+        <h2>Zulu MATHS Batch (CDS 2 2025)</h2>
+        <p>₹ 1999</p>
+        <button onclick="checkAccess('43726','zulu-recording.html')" class="btn">▶️ View Recording</button>
+    </div>
+
+    <!-- NEW CAPF COURSE 1 -->
+    <div class="card">
+        <img src="capf_full.png" alt="CAPF Full Course">
+        <h2>CAPF Paper 1 + Paper 2 Delta Batch (CAPF 2026)</h2>
+        <p>₹ 7999</p>
+        <button onclick="checkAccess('98521','capf-full-recording.html')" class="btn">▶️ View Recording</button>
+    </div>
+
+    <!-- NEW CAPF COURSE 2 -->
+    <div class="card">
+        <img src="capf_paper2.png" alt="CAPF Paper 2">
+        <h2>CAPF Paper 2 Delta Batch (CAPF 2026)</h2>
+        <p>₹ 4999</p>
+        <button onclick="checkAccess('45278','capf-paper2-recording.html')" class="btn">▶️ View Recording</button>
+    </div>
+
+</div>
+
+<script>
+// 🔐 Access check function
+function checkAccess(correctPassword, pageUrl) {
+    const input = prompt("Enter access code to view recordings:");
+    if (input === correctPassword) {
+        window.location.href = pageUrl;
+    } else if (input === null) {
+        alert("Access cancelled.");
+    } else {
+        alert("Incorrect code! Access denied.");
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Grammar - Lecture Series</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(270deg, #001f3f, #00796b, #00bcd4, #004d40);
+      background-size: 600% 600%;
+      animation: gradientFlow 16s ease infinite;
+      color: #e0f7fa;
+      min-height: 100vh;
+      text-align: center;
+      padding: 40px 15px;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 35px;
+      background: linear-gradient(90deg, #00e5ff, #22ff88, #a7ffeb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+      animation: shine 3s linear infinite alternate;
+    }
+
+    @keyframes shine {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    .lecture-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      max-width: 750px;
+      margin: 0 auto 25px auto;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      animation: slideUp 0.8s ease forwards;
+    }
+
+    .lecture-box:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 35px rgba(0, 188, 212, 0.7);
+      border: 1px solid rgba(0, 188, 212, 0.5);
+    }
+
+    .lecture-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #4ef3c8;
+      margin-bottom: 10px;
+    }
+
+    .lecture-content {
+      display: none;
+      font-size: 1rem;
+      color: #c9f7f5;
+      text-align: left;
+      margin-top: 12px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .lecture-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-watch {
+      display: inline-block;
+      margin-top: 18px;
+      background: linear-gradient(135deg, #00bcd4, #22ff88, #00e5ff);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 35px;
+      font-size: 1rem;
+      box-shadow: 0 0 25px rgba(0, 188, 212, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .btn-watch:hover {
+      transform: scale(1.08);
+      background: linear-gradient(135deg, #22ff88, #00e5ff, #00bcd4);
+      box-shadow: 0 0 40px rgba(0, 188, 212, 0.7);
+    }
+
+    .btn-back {
+      display: inline-block;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      padding: 12px 24px;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 40px;
+      box-shadow: 0 5px 20px rgba(0, 188, 212, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn-back:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #2a5298, #1e3c72);
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #b2ebf2;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 English Grammar - Lecture Series</h1>
+
+  <div class="lecture-box" onclick="toggleLecture('lecture1')">
+    <div class="lecture-header">
+      <span>1️⃣ Tense (Part 1)</span>
+      <i id="arrow-lecture1">▼</i>
+    </div>
+    <div id="lecture1" class="lecture-content">
+      <p><strong>Duration:</strong> 40 min</p>
+      <p><strong>Description:</strong> Understanding basic tenses and sentence usage.</p>
+      <a href="https://us06web.zoom.us/rec/play/J3lFdXfP1f_cdCFicFl-Bw2PdTLc1stD1BR_INehJ8w3Tqwp5LCveHsWMH7nuo_teMr9iOMZNvmvj-gZ.2ZvOu9_GYojwOCG9" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <div class="lecture-box" onclick="toggleLecture('lecture2')">
+    <div class="lecture-header">
+      <span>2️⃣ Tense Samapt</span>
+      <i id="arrow-lecture2">▼</i>
+    </div>
+    <div id="lecture2" class="lecture-content">
+      <p><strong>Duration:</strong> 45 min</p>
+      <p><strong>Description:</strong> Perfect and continuous forms with examples.</p>
+      <a href="https://us06web.zoom.us/rec/share/BOyR0i3aXN2aJDghpoY093yyjCvbOvepZgq0a73ztwjnOjh6UuudR_Z3tvhqXwfn.HjxK8UrphgjIe6rH" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <div class="lecture-box" onclick="toggleLecture('lecture3')">
+    <div class="lecture-header">
+      <span>3️⃣ Parts of Speech Basic</span>
+      <i id="arrow-lecture3">▼</i>
+    </div>
+    <div id="lecture3" class="lecture-content">
+      <p><strong>Duration:</strong> 45 min</p>
+      <p><strong>Description:</strong> Understanding all eight parts of speech with examples.</p>
+      <a href="https://us06web.zoom.us/rec/share/eXkYAqBqUaEyYm8CP44O725lrPvwr49it43cgSgJgiI0YZjD2j7G9lCYmwzjRm-I.6HobQFtJF3Mbulnw" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <div class="lecture-box" onclick="toggleLecture('lecture4')">
+    <div class="lecture-header">
+      <span>4️⃣ POS Final</span>
+      <i id="arrow-lecture4">▼</i>
+    </div>
+    <div id="lecture4" class="lecture-content">
+      <p><strong>Duration:</strong> 50 min</p>
+      <p><strong>Description:</strong> Final revision and grammar practice for exams.</p>
+      <a href="https://us06web.zoom.us/rec/play/MLY53sLBXu4ouywCcZndaJ2ujpbsT6GxtcZSDwIGJ2yS9yUUeRI1vjA47Ld3HeZ-p6pU135mXO8Tv0IX.bA7VBAoGJnrGMCFX" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <div class="lecture-box" onclick="toggleLecture('lecture5')">
+    <div class="lecture-header">
+      <span>5️⃣ New Pattern POS</span>
+      <i id="arrow-lecture5">▼</i>
+    </div>
+    <div id="lecture5" class="lecture-content">
+      <p><strong>Duration:</strong> 50 min</p>
+      <p><strong>Description:</strong> Advanced grammar concepts with new exam pattern.</p>
+      <a href="https://us06web.zoom.us/rec/share/1rCrDsxnro335BI4CxZdCtdnB2SwEiokEdL3wG2AFr8jDUkf3lA8FQhvqQlSpbIN.Lx9XekHn1OwxAc6R" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 6 (New) -->
+  <div class="lecture-box" onclick="toggleLecture('lecture6')">
+    <div class="lecture-header">
+      <span>6️⃣ Verb Class 1</span>
+      <i id="arrow-lecture6">▼</i>
+    </div>
+    <div id="lecture6" class="lecture-content">
+      <p><strong>Duration:</strong> 55 min</p>
+      <p><strong>Description:</strong> Introduction to verbs – types, forms, and basic rules.</p>
+      <a href="https://us06web.zoom.us/rec/play/4fLbQB96vibkRMVV7vb3dDDO_iy2jPPwcjyLI3KJczeIyUYtG6mgCJxGvNRtyL9QsBGODY05qvKWvyqw.mp8ZRyWg-OCNANjF?eagerLoadZvaPages=sidemenu.billing.plan_management&isReferralProgramEnabled=false&isReferralProgramAvailable=false&accessLevel=meeting&canPlayFromShare=true&from=share_recording_detail&startTime=1762174157000&componentName=rec-play&originRequestUrl=https%3A%2F%2Fus06web.zoom.us%2Frec%2Fshare%2F_mpK769QPVW0LMW6PgoA7ba1v0hxc4cb8ItcgnVRlxDc42Tf7_xVJSpiFXmi9twL._-hrwHTJazksXLJi%3FstartTime%3D1762174157000" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture 7 (New) -->
+  <div class="lecture-box" onclick="toggleLecture('lecture7')">
+    <div class="lecture-header">
+      <span>7️⃣ Verb Class 2</span>
+      <i id="arrow-lecture7">▼</i>
+    </div>
+    <div id="lecture7" class="lecture-content">
+      <p><strong>Duration:</strong> 60 min</p>
+      <p><strong>Description:</strong> Deep dive into finite and non-finite verbs with examples and sentence exercises.</p>
+      <a href="https://us06web.zoom.us/rec/share/5Q8eVxxZOwcjHKphlXaK_eU6gAgcmZgKoe2TUUmR7YPLpysqGYY_7FppgojouOk.hAC8HYsp9aBnOnYg?startTime=1762348241000"
+         target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+   
+  <!-- Lecture 8 -->
+<div class="lecture-box" onclick="toggleLecture('lecture8')">
+  <div class="lecture-header">
+    <span>8️⃣ Verb – Modal Verbs</span>
+    <i id="arrow-lecture8">▼</i>
+  </div>
+  <div id="lecture8" class="lecture-content">
+    <p><strong>Duration:</strong> 60 min</p>
+    <p><strong>Description:</strong> Understanding modal verbs – can, could, may, might, must & their uses.</p>
+    <a href="https://us06web.zoom.us/rec/share/5Q8eVxxZOwcjHKphlXaK_eU6gAgcmZgKoe2TUUmR7YPLpysqGYY_7FppgojouOk.hAC8HYsp9aBnOnYg?startTime=1762351504000"
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+
+  <a href="dashboard.html" class="btn-back">⬅ Back to Dashboard</a>
+
+  <footer>✨ Designed by <strong>Aditya Shirke</strong> | English Grammar Series</footer>
+
+  <script>
+    function toggleLecture(id) {
+      const content = document.getElementById(id);
+      const arrow = document.getElementById('arrow-' + id);
+      content.classList.toggle('active');
+      arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+    }
+  </script>
+
+</body>
+</html>

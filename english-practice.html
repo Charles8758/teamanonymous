@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baat Cheet – English Practice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at 10% 30%, #0a043c, #1a1a65, #0088ff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 20px;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, #00e1ff60, transparent 70%);
+      animation: moveGlow 8s ease-in-out infinite alternate;
+      filter: blur(100px);
+      z-index: 0;
+    }
+
+    @keyframes moveGlow {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-150px, 120px); }
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 40px;
+      background: linear-gradient(90deg, #00f5ff, #00c6ff, #7b2ff7, #00ffcc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientMove 6s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0%; }
+      100% { background-position: 200%; }
+    }
+
+    .lecture-box {
+      width: 100%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 25px 30px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 25px rgba(0, 255, 255, 0.15);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 20px;
+    }
+
+    .lecture-box:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 35px rgba(0, 255, 255, 0.35);
+      border-color: rgba(0, 255, 255, 0.4);
+    }
+
+    .lecture-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #00f5ff;
+    }
+
+    .lecture-content {
+      display: none;
+      margin-top: 15px;
+      color: #d1d5db;
+      font-size: 1rem;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .lecture-content.active { display: block; }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .btn-watch {
+      display: inline-block;
+      margin-top: 18px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff, #00ffcc);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 35px;
+      font-size: 1rem;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn-watch:hover {
+      transform: scale(1.08);
+      background: linear-gradient(135deg, #00ffcc, #0072ff, #00e1ff);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 50px;
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      color: #fff;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
+    }
+
+    .btn-back:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(0, 255, 255, 0.6);
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      z-index: 1;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      .lecture-header { font-size: 1.1rem; }
+      .btn-watch { font-size: 0.9rem; padding: 10px 22px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎬 English Practice – Lecture Series</h1>
+
+  <!-- Class 1 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture1')">
+    <div class="lecture-header">
+      <span>1️⃣ ROOT WORD PYQ CLASS 1</span>
+      <i id="arrow1">▼</i>
+    </div>
+    <div id="lecture1" class="lecture-content">
+      <p><strong>Duration:</strong> 45 min</p>
+      <p><strong>Description:</strong> Root Words Practice</p>
+      <a href="https://us06web.zoom.us/rec/share/ffMetGOn2Gn3vTwftbRLeB13sGbR5-8oVGzUNKZtvoqa5wy1qRFeytm2XKSO5dUp.i_KCMeY4IoD0VFnr" target="_blank" class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Class 2 -->
+  <div class="lecture-box" onclick="toggleLecture('lecture2')">
+    <div class="lecture-header">
+      <span>2️⃣ POS PRACTICE CLASS</span>
+      <i id="arrow2">▼</i>
+    </div>
+    <div id="lecture2" class="lecture-content">
+      <p><strong>Duration:</strong> 50 min</p>
+      <p><strong>Description:</strong> Practice session on Parts of Speech</p>
+      <a href="https://us06web.zoom.us/rec/share/zKd-fEBMxZ0305E5xWCLY4m4wtnjkOu7XHXwlesBoMkD4OkESU-kbfSWUVBc9eG6.l3S2jhNEunsKYBB7"
+         target="_blank"
+         class="btn-watch">🎥 Watch Class</a>
+    </div>
+  </div>
+
+  <!-- Lecture – Root Word Vocabulary -->
+<div class="lecture-box" onclick="toggleLecture('lectureRootVocab','arrowRootVocab')">
+  <div class="lecture-header">
+    <span>3️⃣ Root Word Vocabulary</span>
+    <span id="arrowRootVocab">▼</span>
+  </div>
+  <div id="lectureRootVocab" class="lecture-content">
+    <p><strong>Duration:</strong> [Insert Duration]</p>
+    <p><strong>Description:</strong> Learn common root words to build your vocabulary power — very useful for English + Reasoning.</p>
+    <a href="https://us06web.zoom.us/rec/share/zhpsyCC_-ytUUI6KiLrJSZXDVQYuTZ017jrOF2l5x-0LLxh2ynytXEs5ShEfVndw.kBcssDDIPsg98G5n" 
+       target="_blank" class="btn-watch">🎥 Watch Class</a>
+  </div>
+</div>
+
+  <a href="dashboard.html" class="btn-back">⬅ Back to Dashboard</a>
+  <footer>💎 Designed by <strong>Aditya Shirke</strong> | Baat Cheet Series</footer>
+
+  <script>
+    function toggleLecture(id) {
+      const content = document.getElementById(id);
+      const arrow = document.getElementById('arrow' + id.slice(-1));
+      content.classList.toggle('active');
+      arrow.textContent = content.classList.contains('active') ? '▲' : '▼';
+    }
+  </script>
+</body>
+</html>

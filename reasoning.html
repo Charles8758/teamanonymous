@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>🎬 Reasoning - Lecture Series</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at 12% 18%, #002f4b, #007d9c 35%, #00b4db 100%);
+      color:#fff;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:40px 18px;
+      position:relative;
+      overflow-x:hidden;
+    }
+
+    /* subtle floating glow */
+    body::before{
+      content:"";
+      position:absolute;
+      top:-120px;
+      right:-140px;
+      width:480px;
+      height:480px;
+      background:radial-gradient(circle, rgba(0,229,255,0.14), transparent 60%);
+      filter:blur(110px);
+      z-index:0;
+      animation: floatGlow 10s ease-in-out infinite alternate;
+    }
+    @keyframes floatGlow{0%{transform:translate(0,0)}100%{transform:translate(-220px,160px)}}
+
+    h1{
+      z-index:1;
+      font-size:2.6rem;
+      text-align:center;
+      margin-bottom:18px;
+      background:linear-gradient(90deg,#00f2fe,#4facfe,#43e97b);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      letter-spacing:1px;
+      animation: headingShift 6s linear infinite;
+    }
+    @keyframes headingShift{0%{background-position:0%}100%{background-position:200%}}
+
+    .subtitle{
+      z-index:1;
+      margin-bottom:30px;
+      opacity:0.95;
+      font-weight:500;
+    }
+
+    .container{
+      width:100%;
+      max-width:920px;
+      z-index:1;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .lecture-box{
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.10);
+      border-radius:18px;
+      padding:20px 26px;
+      backdrop-filter:blur(10px);
+      box-shadow:0 8px 30px rgba(0,0,0,0.35);
+      transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+      cursor:pointer;
+    }
+    .lecture-box:hover{
+      transform:translateY(-8px) scale(1.01);
+      box-shadow:0 18px 50px rgba(0,214,255,0.14);
+      border-color:rgba(0,214,255,0.28);
+    }
+
+    .lecture-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      font-size:1.15rem;
+      font-weight:600;
+      color:#dffeff;
+    }
+
+    .lecture-meta{
+      margin-top:12px;
+      color:#d6eef2;
+      font-size:0.97rem;
+      line-height:1.6;
+      display:none;
+      animation:fadeIn .32s ease;
+    }
+    .lecture-meta.active{display:block}
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+
+    .btn-watch{
+      display:inline-block;
+      margin-top:14px;
+      padding:11px 26px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:700;
+      letter-spacing:.3px;
+      background:linear-gradient(135deg,#00f2fe,#43e97b);
+      color:#002b2b;
+      box-shadow:0 8px 30px rgba(67,233,123,0.12);
+      transition:transform .18s ease, box-shadow .22s ease, background .22s ease;
+    }
+    .btn-watch:hover{transform:scale(1.06); box-shadow:0 12px 40px rgba(67,233,123,0.18)}
+
+    .btn-back{
+      display:inline-block;
+      margin-top:28px;
+      padding:10px 26px;
+      border-radius:28px;
+      text-decoration:none;
+      font-weight:700;
+      background:linear-gradient(135deg,#006a86,#00b4db);
+      color:#fff;
+      box-shadow:0 8px 30px rgba(0,180,219,0.14);
+      transition:transform .18s ease;
+    }
+    .btn-back:hover{transform:scale(1.04)}
+
+    footer{margin-top:38px; opacity:.8; font-size:0.92rem; z-index:1}
+
+    /* responsive */
+    @media (max-width:720px){
+      h1{font-size:2rem}
+      .lecture-box{padding:16px}
+      .btn-watch{padding:10px 20px}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 Reasoning — Lecture Series</h1>
+  <div class="subtitle">Clear concepts, practice & recordings</div>
+
+  <div class="container">
+
+    <!-- Lecture 1 -->
+    <div class="lecture-box" onclick="toggleLecture('lecture1','arrow1')">
+      <div class="lecture-header">
+        <div>1️⃣ Khooni Rishtein — Part 1</div>
+        <div id="arrow1">▼</div>
+      </div>
+
+      <div id="lecture1" class="lecture-meta">
+        <div><strong>Duration:</strong> 45 min</div>
+        <div style="margin-top:6px;"><strong>Description:</strong> Khooni Rishtein - Episode 1 (Part 1)</div>
+        <a class="btn-watch" href="https://us06web.zoom.us/rec/share/0rlwMUsP2pwpQVo5O0oTgm40FMtpuyBKCs-ZY7gm2pUaze-8yFjAaufUpmhuSXZT.kgtluX_fuNrx17uO" target="_blank" rel="noreferrer">🎥 Watch Class</a>
+      </div>
+    </div>
+
+    <!-- Lecture 2 -->
+    <div class="lecture-box" onclick="toggleLecture('lecture2','arrow2')">
+      <div class="lecture-header">
+        <div>2️⃣ Khooni Rishtein — Part 2</div>
+        <div id="arrow2">▼</div>
+      </div>
+
+      <div id="lecture2" class="lecture-meta">
+        <div><strong>Duration:</strong> 50 min</div>
+        <div style="margin-top:6px;"><strong>Description:</strong> Khooni Rishtein - Episode 1 (Part 2)</div>
+        <a class="btn-watch" href="https://us06web.zoom.us/rec/play/4VRkS0G5AD5zs06H6rpm0GwMCT9DQlcM73q__Jx0w3jVi8tGEPnUJq_-74B3bt361WD8xrxWJ5gUV2Ev.pVIhIrFgpS-nWVFY" target="_blank" rel="noreferrer">🎥 Watch Class</a>
+      </div>
+    </div>
+
+    <!-- Lecture 3 -->
+    <div class="lecture-box" onclick="toggleLecture('lecture3','arrow3')">
+      <div class="lecture-header">
+        <div>3️⃣ Khooni Rishtein — Part 3</div>
+        <div id="arrow3">▼</div>
+      </div>
+
+      <div id="lecture3" class="lecture-meta">
+        <div><strong>Duration:</strong> 50 min</div>
+        <div style="margin-top:6px;"><strong>Description:</strong> Khooni Rishtein - Episode 1 (Part 3)</div>
+        <a class="btn-watch" href="https://us06web.zoom.us/rec/share/ad-gaOMSK6oiLEUUAoe0-kpeQUiLW51OniKT0f0sJiSrCsHgGe9eHWUVpxtBsuTZ.Ysdh9DfkwEZFYHSM" target="_blank" rel="noreferrer">🎥 Watch Class</a>
+      </div>
+    </div>
+
+  </div>
+
+  <a class="btn-back" href="dashboard.html">⬅ Back to Dashboard</a>
+
+  <footer>✨ Designed by <strong>Aditya Shirke</strong> | Reasoning Series</footer>
+
+  <script>
+    // toggle expand/collapse and update arrow
+    function toggleLecture(contentId, arrowId){
+      const content = document.getElementById(contentId);
+      const arrow = document.getElementById(arrowId);
+
+      // close other open lectures (single-open behavior)
+      document.querySelectorAll('.lecture-meta').forEach(el => {
+        if (el.id !== contentId) el.classList.remove('active');
+      });
+      document.querySelectorAll('[id^="arrow"]').forEach(a => {
+        if (a.id !== arrowId) a.textContent = '▼';
+      });
+
+      // toggle chosen
+      const open = content.classList.toggle('active');
+      arrow.textContent = open ? '▲' : '▼';
+    }
+  </script>
+</body>
+</html>
